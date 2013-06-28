@@ -7,9 +7,15 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "PhotoGrabber.h"
 
-@interface AppDelegate : NSObject <NSApplicationDelegate>
-
+@interface AppDelegate : NSObject <NSApplicationDelegate, PhotoGrabberDelegate>{
+    PhotoGrabber *grabber;
+}
 @property (assign) IBOutlet NSWindow *window;
+@property (assign) IBOutlet NSView *view;
+
+@property (nonatomic,retain) PhotoGrabber *grabber;
+- (IBAction)takeSnapShoot:(id)pId;
 
 @end
